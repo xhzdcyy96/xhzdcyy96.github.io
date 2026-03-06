@@ -36,12 +36,20 @@ title: 欢迎来到我的个人网站
   </ul>
 </div>
 
+## 示例页面
+
+<div class="card">
+  <h2>项目示例</h2>
+  <a href="/static/map/index.html" class="btn" target="_blank">地图页面</a>
+</div>
+
 ## 静态页面
 
 <div class="card">
   <h2>静态页面示例</h2>
   <p>查看一个简单的HTML静态页面示例，展示了基本的网页结构和样式。</p>
   <a href="/static/index.html" class="btn" target="_blank">访问静态页面</a>
+  <a href="/static/css.html" class="btn" target="_blank">访问CSS示例</a>
   <a href="/static/css.html" class="btn" target="_blank">访问CSS示例</a>
 </div>
 
