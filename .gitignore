@@ -2,8 +2,8 @@
 node_modules/
 
 # Build output
-.vitepress/dist/
-.vitepress/cache/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
 
 # Environment variables
 .env
