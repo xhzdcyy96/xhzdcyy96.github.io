@@ -53,7 +53,7 @@ title: 欢迎来到我的个人网站
   <a href="/static/css.html" class="btn" target="_blank">访问CSS示例</a>
 </div>
 
-## 嵌入窗口
+<!-- ## 嵌入窗口
 
 <div class="card">
   <h2>嵌入窗口示例</h2>
@@ -61,4 +61,4 @@ title: 欢迎来到我的个人网站
   <div class="iframe-container">
     <iframe src="./static/index.html" width="100%" height="400px" frameborder="0" allowfullscreen></iframe>
   </div>
-</div>
+</div> -->
