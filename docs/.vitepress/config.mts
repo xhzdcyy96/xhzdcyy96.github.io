@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 import { resolve } from 'path'
 
 export default defineConfig({
-  base: '/page/',
+  base: '/',
   title: '个人网站',
   description: '我的个人网站',
   themeConfig: {
