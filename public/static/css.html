@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Clip-path 特效</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .clip-path-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        .clip-path-item {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .clip-path-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .clip-path-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .clip-path-item:nth-child(1)::before {
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        }
+        
+        .clip-path-item:nth-child(1):hover::before {
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+        
+        .clip-path-item:nth-child(2)::before {
+            clip-path: circle(50% at 50% 50%);
+        }
+        
+        .clip-path-item:nth-child(2):hover::before {
+            clip-path: ellipse(60% 40% at 50% 50%);
+        }
+        
+        .clip-path-item:nth-child(3)::before {
+            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+        }
+        
+        .clip-path-item:nth-child(3):hover::before {
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+        
+        .clip-path-item:nth-child(4)::before {
+            clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+        }
+        
+        .clip-path-item:nth-child(4):hover::before {
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+        
+        .clip-path-item .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .clip-path-item:hover .text {
+            opacity: 1;
+        }
+        
+        .animation-container {
+            width: 100%;
+            height: 300px;
+            position: relative;
+            margin-top: 40px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .animated-shape {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, #ff6b6b 0%, #ee5a6f 100%);
+            animation: shape-shift 5s infinite alternate;
+        }
+        
+        @keyframes shape-shift {
+            0% {
+                clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            }
+            25% {
+                clip-path: circle(50% at 50% 50%);
+            }
+            50% {
+                clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+            }
+            75% {
+                clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+            }
+            100% {
+                clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+            }
+        }
+        
+        .description {
+            margin-top: 40px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .description h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .description p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .back-link {
+            margin-top: 40px;
+        }
+        
+        .back-link a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        
+        .back-link a:hover {
+            background: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Clip-path 特效</h1>
+        
+        <div class="clip-path-container">
+            <div class="clip-path-item">
+                <div class="text">菱形</div>
+            </div>
+            <div class="clip-path-item">
+                <div class="text">圆形</div>
+            </div>
+            <div class="clip-path-item">
+                <div class="text">八边形</div>
+            </div>
+            <div class="clip-path-item">
+                <div class="text">波浪形</div>
+            </div>
+        </div>
+        
+        <div class="animation-container">
+            <div class="animated-shape"></div>
+        </div>
+        
+        <div class="description">
+            <h2>关于 CSS Clip-path</h2>
+            <p>CSS clip-path 属性允许您创建各种形状，通过定义一个元素的可见区域。您可以使用多边形、圆形、椭圆等基本形状，也可以使用复杂的路径。</p>
+            <p>在这个示例中，我们展示了几种不同的 clip-path 形状，以及一个使用动画效果的形状变换。当您将鼠标悬停在形状上时，它们会改变形状并显示文字。</p>
+        </div>
+        
+        <div class="back-link">
+            <a href="/">返回主页</a>
+        </div>
+    </div>
+</body>
+</html>

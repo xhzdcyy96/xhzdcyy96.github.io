@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>随意撕 Logo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            background: white;
+        }
+        .logo {
+            font-family: 'Arial', sans-serif;
+            font-size: 60px;
+            font-weight: bold;
+            color: black;
+            text-shadow: 2px 2px 0px #fff, 4px 4px 0px rgba(0,0,0,0.1);
+            letter-spacing: -2px;
+            transform: skew(-5deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">随意撕</div>
+</body>
+</html>
