@@ -42,6 +42,7 @@ title: 欢迎来到我的个人网站
   <h2>项目示例</h2>
   <a href="/static/map/index.html" class="btn" target="_blank">地图页面</a>
   <a href="/static/towerDefense/index.html" class="btn" target="_blank">塔防小游戏</a>
+  <a href="/static/chat/index.html" class="btn" target="_blank">聊天页面</a>
 </div>
 
 ## 静态页面
